@@ -8,7 +8,7 @@ namespace WebApi.DataBase.Models
     using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations;
 
-    public class People
+    public class Person
     {
         [Key]
         public string Identity { get; set; }

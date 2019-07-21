@@ -7,7 +7,7 @@ namespace WebApi.DataBase.Models
     using System;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class LogginToken
+    public class LoginToken
     {
         public string Token { get; set; }
 
