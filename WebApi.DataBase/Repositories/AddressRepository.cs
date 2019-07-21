@@ -1,4 +1,4 @@
-﻿// <copyright file="UserRepository.cs" company="PlaceholderCompany">
+﻿// <copyright file="AddressRepository.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
@@ -9,19 +9,19 @@ namespace WebApi.DataBase.Repositories
     using WebApi.DataBase.Context;
     using WebApi.DataBase.Models;
 
-    public class UserRepository : WebApiRepositoryBase<User>
+    public class AddressRepository : WebApiRepositoryBase<Address>
     {
-        public UserRepository(WebApiContext context)
+        public AddressRepository(WebApiContext context)
            : base(context)
         {
         }
 
-        public override IQueryable<User> All()
+        public override IQueryable<Address> All()
         {
-            return Context.User;
+            return Context.Address;
         }
 
-        protected override User MapNewValuesToOld(User oldEntity, User newEntity)
+        protected override Address MapNewValuesToOld(Address oldEntity, Address newEntity)
         {
             throw new NotImplementedException();
         }

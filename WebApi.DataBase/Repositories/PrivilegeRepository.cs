@@ -9,7 +9,7 @@ namespace WebApi.DataBase.Repositories
     using WebApi.DataBase.Context;
     using WebApi.DataBase.Models;
 
-    class PrivilegeRepository : WebApiRepositoryBase<Privilege>
+    public class PrivilegeRepository : WebApiRepositoryBase<Privilege>
     {
         public PrivilegeRepository(WebApiContext context)
            : base(context)
@@ -18,7 +18,7 @@ namespace WebApi.DataBase.Repositories
 
         public override IQueryable<Privilege> All()
         {
-            return this.Context.Privilege;
+            return Context.Privilege;
         }
 
         protected override Privilege MapNewValuesToOld(Privilege oldEntity, Privilege newEntity)
