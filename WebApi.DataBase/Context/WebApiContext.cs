@@ -33,5 +33,9 @@ namespace WebApi.DataBase.Context
         public DbSet<Role> Role { get; set; }
 
         public DbSet<User> User { get; set; }
+
+        public DbSet<Adress> Adress { get; set; }
+
+        public DbSet<Telephone> Telephone { get; set; }
     }
 }
