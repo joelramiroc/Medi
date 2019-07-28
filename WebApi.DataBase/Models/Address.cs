@@ -6,7 +6,7 @@ namespace WebApi.DataBase.Models
 {
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Adress
+    public class Address
     {
         public string Number { get; set; }
 
