@@ -13,7 +13,7 @@ namespace WebApi.DataBase.Models
         [ForeignKey(nameof(Rol))]
         public int IdRol { get; set; }
 
-        public Rol Rol { get; set; }
+        public Role Rol { get; set; }
 
         public string Name { get; set; }
 

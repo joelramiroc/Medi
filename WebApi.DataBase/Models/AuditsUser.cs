@@ -7,7 +7,7 @@ namespace WebApi.DataBase.Models
     using System;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class AuditoriesUser
+    public class AuditsUser
     {
         public int Id { get; set; }
 

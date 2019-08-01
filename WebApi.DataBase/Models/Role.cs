@@ -6,7 +6,7 @@ namespace WebApi.DataBase.Models
 {
     using System.Collections.ObjectModel;
 
-    public class Rol
+    public class Role
     {
         public int Id { get; set; }
 

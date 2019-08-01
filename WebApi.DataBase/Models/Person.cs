@@ -8,7 +8,7 @@ namespace WebApi.DataBase.Models
     using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations;
 
-    public class People
+    public class Person
     {
         [Key]
         public string Identity { get; set; }
@@ -26,5 +26,9 @@ namespace WebApi.DataBase.Models
         public DateTime Created { get; set; }
 
         public virtual ObservableCollection<User> Users { get; set; }
+
+        public virtual ObservableCollection<Telephone> Telephones { get; set; }
+
+        public virtual ObservableCollection<Address> Addresses { get; set; }
     }
 }

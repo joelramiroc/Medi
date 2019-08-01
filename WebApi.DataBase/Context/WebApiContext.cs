@@ -20,18 +20,22 @@ namespace WebApi.DataBase.Context
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<AuditoriesUser> AuditoriesUser { get; set; }
+        public DbSet<AuditsUser> AuditsUser { get; set; }
 
         public DbSet<Client> Client { get; set; }
 
-        public DbSet<LogginToken> LogginToken { get; set; }
+        public DbSet<LoginToken> LoginToken { get; set; }
 
-        public DbSet<People> People { get; set; }
+        public DbSet<Person> Person { get; set; }
 
         public DbSet<Privilege> Privilege { get; set; }
 
-        public DbSet<Rol> Rol { get; set; }
+        public DbSet<Role> Role { get; set; }
 
         public DbSet<User> User { get; set; }
+
+        public DbSet<Address> Address { get; set; }
+
+        public DbSet<Telephone> Telephone { get; set; }
     }
 }

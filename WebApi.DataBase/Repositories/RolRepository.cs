@@ -1,4 +1,4 @@
-﻿// <copyright file="UserRepository.cs" company="PlaceholderCompany">
+﻿// <copyright file="RolRepository.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
@@ -9,19 +9,19 @@ namespace WebApi.DataBase.Repositories
     using WebApi.DataBase.Context;
     using WebApi.DataBase.Models;
 
-    public class UserRepository : WebApiRepositoryBase<User>
+    public class RolRepository : WebApiRepositoryBase<Role>
     {
-        public UserRepository(WebApiContext context)
+        public RolRepository(WebApiContext context)
            : base(context)
         {
         }
 
-        public override IQueryable<User> All()
+        public override IQueryable<Role> All()
         {
-            return Context.User;
+            return Context.Rol;
         }
 
-        protected override User MapNewValuesToOld(User oldEntity, User newEntity)
+        protected override Role MapNewValuesToOld(Role oldEntity, Role newEntity)
         {
             throw new NotImplementedException();
         }

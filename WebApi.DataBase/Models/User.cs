@@ -16,7 +16,7 @@ namespace WebApi.DataBase.Models
         [ForeignKey(nameof(People))]
         public string IdentityPeople { get; set; }
 
-        public People People { get; set; }
+        public Person People { get; set; }
 
         [Index("IX_Email", IsUnique = true, Order = 1)]
         public string Email { get; set; }
@@ -26,10 +26,10 @@ namespace WebApi.DataBase.Models
 
         public string Password { get; set; }
 
-        public ObservableCollection<Rol> Rols { get; set; }
+        public ObservableCollection<Role> Rols { get; set; }
 
-        public ObservableCollection<AuditoriesUser> Auditories_user { get; set; }
+        public ObservableCollection<AuditsUser> Auditories_user { get; set; }
 
-        public ObservableCollection<LogginToken> LogginToken { get; set; }
+        public ObservableCollection<LoginToken> LogginToken { get; set; }
     }
 }

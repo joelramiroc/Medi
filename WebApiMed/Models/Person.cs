@@ -4,7 +4,7 @@
 
 namespace WebApiMed.Models
 {
-    public class People
+    public class Person
     {
     }
 }
