@@ -18,7 +18,7 @@ namespace WebApi.DataBase.Repositories
 
         public override IQueryable<Role> All()
         {
-            return Context.Rol;
+            return Context.Role;
         }
 
         protected override Role MapNewValuesToOld(Role oldEntity, Role newEntity)

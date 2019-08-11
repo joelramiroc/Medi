@@ -9,17 +9,14 @@ namespace WebApi.DataBase.Context
 
     public class WebApiContext : DbContext
     {
-    //{
-    //    public WebApiContext()
-    //        : base("WebApiConecctionString")
-    //    {
-    //    }
+        public WebApiContext()
+        {
+        }
 
-    //    protected override void OnModelCreating(DbModelBuilder modelBuilder)
-    //    {
-    //        modelBuilder.HasDefaultSchema("public");
-    //        base.OnModelCreating(modelBuilder);
-    //    }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UsePostgreSql(@"host=server;database=test;user id=postgres;");
+        }
 
         public DbSet<AuditsUser> AuditsUser { get; set; }
 
@@ -35,7 +32,7 @@ namespace WebApi.DataBase.Context
 
         public DbSet<User> User { get; set; }
 
-        public DbSet<Adress> Adress { get; set; }
+        public DbSet<Address> Address { get; set; }
 
         public DbSet<Telephone> Telephone { get; set; }
     }

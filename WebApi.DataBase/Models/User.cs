@@ -18,10 +18,10 @@ namespace WebApi.DataBase.Models
 
         public Person People { get; set; }
 
-        [Index("IX_Email", IsUnique = true, Order = 1)]
+        //[Index("IX_Email", IsUnique = true, Order = 1)]
         public string Email { get; set; }
 
-        [Index("IX_Username", IsUnique = true, Order = 2)]
+        //[Index("IX_Username", IsUnique = true, Order = 2)]
         public string UserName { get; set; }
 
         public string Password { get; set; }

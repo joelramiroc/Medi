@@ -1,12 +1,15 @@
-﻿// <copyright file="Adress.cs" company="PlaceholderCompany">
+﻿// <copyright file="Address.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
 namespace WebApi.DataBase.Models
 {
+    using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Text;
 
-    public class Adress
+    public class Address
     {
         public string Number { get; set; }
 

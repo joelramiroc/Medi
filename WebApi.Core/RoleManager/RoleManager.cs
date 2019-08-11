@@ -4,8 +4,8 @@
 
 namespace WebApi.Core.RoleManager
 {
+    using Microsoft.EntityFrameworkCore;
     using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Threading.Tasks;
     using WebApi.DataBase.Models;
     using WebApi.DataBase.Repositories;

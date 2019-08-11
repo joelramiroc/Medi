@@ -29,6 +29,6 @@ namespace WebApi.DataBase.Models
 
         public virtual ObservableCollection<Telephone> Telephones { get; set; }
 
-        public virtual ObservableCollection<Adress> Adresses { get; set; }
+        public virtual ObservableCollection<Address> Adresses { get; set; }
     }
 }

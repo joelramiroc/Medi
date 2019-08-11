@@ -4,8 +4,8 @@
 
 namespace WebApi.DataBase.Repositories
 {
+    using Microsoft.EntityFrameworkCore;
     using System;
-    using System.Data.Entity;
     using System.Linq;
     using System.Linq.Expressions;
     using System.Threading;
@@ -118,10 +118,12 @@ namespace WebApi.DataBase.Repositories
         /// </returns>
         public virtual TEntity Create()
         {
-            IDbSet<TEntity> set = this.Context.Set<TEntity>();
-            var entity = set.Create();
-            this.Context.Entry(entity).State = EntityState.Added;
-            return entity;
+            //IDbSet<TEntity> set = this.Context.Set<TEntity>();
+            //var entity = set.Create();
+            //this.Context.Entry(entity).State = EntityState.Added;
+            //this.Context.
+            //return entity;
+            return null;
         }
 
         /// <summary>
