@@ -4,21 +4,22 @@
 
 namespace WebApi.DataBase.Context
 {
-    using System.Data.Entity;
+    using Microsoft.EntityFrameworkCore;
     using WebApi.DataBase.Models;
 
     public class WebApiContext : DbContext
     {
-        public WebApiContext()
-            : base(nameOrConnectionString: "WebApiConecctionString")
-        {
-        }
+    //{
+    //    public WebApiContext()
+    //        : base("WebApiConecctionString")
+    //    {
+    //    }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.HasDefaultSchema("public");
-            base.OnModelCreating(modelBuilder);
-        }
+    //    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    //    {
+    //        modelBuilder.HasDefaultSchema("public");
+    //        base.OnModelCreating(modelBuilder);
+    //    }
 
         public DbSet<AuditsUser> AuditsUser { get; set; }
 

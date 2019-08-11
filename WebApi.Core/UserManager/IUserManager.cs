@@ -5,13 +5,14 @@
 namespace WebApi.Core.UserManager
 {
     using System.Threading.Tasks;
+    using WebApi.DataBase.Models;
 
     public interface IUserManager
     {
-        Task<bool> GetUser(int id);
+        Task<User> GetUser(int id);
 
-        Task<bool> GetUserByUsername(string userName, string password);
+        Task<User> GetUserByUsername(string userName, string password);
 
-        Task<bool> GetUserByEmail(string userName, string password);
+        Task<User> GetUserByEmail(string userName, string password);
     }
 }
