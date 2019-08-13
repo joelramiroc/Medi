@@ -12,6 +12,8 @@ namespace WebApiMed
     using Microsoft.Extensions.DependencyInjection;
     using WebApi.Core.RoleManager;
     using WebApi.Core.UserManager;
+    using WebApi.DataBase.Models;
+    using WebApi.DataBase.Repositories;
 
     public class Startup
     {
@@ -26,7 +28,25 @@ namespace WebApiMed
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.Add(new ServiceDescriptor(typeof(IUserManager), new UserManager()));
+        }
+
+        public void LoadRepositories(IServiceCollection services)
+        {
+            services.AddTransient<IRepository<Address>, AddressRepository>();
+            services.AddTransient<IRepository<AuditsUser>, AuditsUserRepository>();
+            services.AddTransient<IRepository<LoginToken>, LoginTokenRepository>();
+            services.AddTransient<IRepository<Person>, PersonRepository>();
+            services.AddTransient<IRepository<Privilege>, PrivilegeRepository>();
+            services.AddTransient<IRepository<Role>, RolRepository>();
+            services.AddTransient<IRepository<Telephone>, TelephoneRepository>();
+            services.AddTransient<IRepository<User>, UserRepository>();
+        }
+
+        public void LoadManagers(IServiceCollection services)
+        {
+            //services.Add(new ServiceDescriptor(typeof(IUserManager), new UserManager()));
+            services.AddTransient<IRoleManager, RoleManager>();
+            services.AddTransient<IUserManager, UserManager>();
             services.AddTransient<IRoleManager, RoleManager>();
         }
 
