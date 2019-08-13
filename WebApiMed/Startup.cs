@@ -6,7 +6,6 @@ namespace WebApiMed
 {
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -19,7 +18,7 @@ namespace WebApiMed
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            this.Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
@@ -28,6 +27,8 @@ namespace WebApiMed
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            this.LoadRepositories(services);
+            this.LoadManagers(services);
         }
 
         public void LoadRepositories(IServiceCollection services)
