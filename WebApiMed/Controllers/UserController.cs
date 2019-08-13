@@ -4,25 +4,28 @@
 
 namespace WebApiMed.Controllers
 {
-    using Microsoft.AspNetCore.Mvc;
     using System.Collections.Generic;
     using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Mvc;
+    using WebApi.Core.UserManager;
 
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : Controller
     {
-        //IUserManager UserManager;
+        IUserManager UserManager;
 
-        public UserController()
+        public UserController(IUserManager UserManager)
         {
-            //this.UserManager = new UserManager();
+            this.UserManager = UserManager;
         }
+
 
         [HttpGet]
         public async Task<ActionResult<object>> GetUser()
         {
-            //return (await this.UserManager.GetUser(1));
+            return (await this.UserManager.GetUser(1));
+
             return null;
         }
     }

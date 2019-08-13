@@ -11,9 +11,9 @@ namespace WebApi.Core.UserManager
 
     public class UserManager : IUserManager
     {
-        private readonly UserRepository userRepository;
+        private readonly IRepository<User> userRepository;
 
-        public UserManager()
+        public UserManager(IRepository<User> userRepository)
         {
             this.userRepository = userRepository;
         }
