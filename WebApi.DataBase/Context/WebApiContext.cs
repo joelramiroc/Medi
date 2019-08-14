@@ -4,19 +4,14 @@
 
 namespace WebApi.DataBase.Context
 {
-    using java.awt.image;
     using Microsoft.EntityFrameworkCore;
     using WebApi.DataBase.Models;
 
     public class WebApiContext : DbContext
     {
-        public WebApiContext()
+        public WebApiContext(DbContextOptions<WebApiContext> options)
+            : base(options)
         {
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UsePostgreSql(@"host=server;database=test;user id=postgres;");
         }
 
         public DbSet<AuditsUser> AuditsUser { get; set; }

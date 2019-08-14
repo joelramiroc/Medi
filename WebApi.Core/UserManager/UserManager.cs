@@ -20,12 +20,6 @@ namespace WebApi.Core.UserManager
 
         public async Task<User> GetUser(int id)
         {
-            return new User
-            {
-                UserName = "test.com",
-                Email = "test@test.com",
-            };
-
             var result = await this.userRepository.FirstOrDefaultAsync(s => s.Id == id);
             return result;
         }

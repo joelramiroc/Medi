@@ -7,6 +7,7 @@ namespace WebApiMed
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using WebApi.Core.RoleManager;
@@ -28,12 +29,9 @@ namespace WebApiMed
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            //services.AddTransient<DbContext, WebApiContext>();
+            services.AddEntityFrameworkNpgsql().AddDbContext<WebApiContext>(opt =>
+                opt.UseNpgsql(Configuration.GetConnectionString("MyWebApiConection")));
 
-            //services.AddDbContextPool<WebApiContext>(options =>
-            //{
-            //    options.UseSqlServer("host=hostname;port=5432;database=databaseName;user id=userName;password=secret");
-            //});
             services.AddDbContext<WebApiContext>();
             this.LoadRepositories(services);
             this.LoadManagers(services);
