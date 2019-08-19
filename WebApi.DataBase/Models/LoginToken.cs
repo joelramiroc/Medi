@@ -11,10 +11,10 @@ namespace WebApi.DataBase.Models
     {
         public string Token { get; set; }
 
-        [ForeignKey(nameof(User))]
-        public int Iduser { get; set; }
+        //[ForeignKey(nameof(User))]
+        //public int Iduser { get; set; }
 
-        public virtual User User { get; set; }
+        //public virtual User User { get; set; }
 
         public DateTime CreationDate { get; set; }
 

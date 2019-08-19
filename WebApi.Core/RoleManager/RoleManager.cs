@@ -43,19 +43,21 @@ namespace WebApi.Core.RoleManager
 
         public async Task<IEnumerable<Role>> GetRoleByUserIdAsync(int idUser)
         {
-            return (await this.userRepository.FirstOrDefaultAsync(s => s.Id == idUser)).Rols;
+            return null;
+            //return (await this.userRepository.FirstOrDefaultAsync(s => s.Id == idUser)).Rols;
         }
 
         public async Task<IEnumerable<Role>> GetRoleWithPrivilegesByUserIdAsync(int idUser)
         {
-            var result = (await this.userRepository.FirstOrDefaultAsync(s => s.Id == idUser)).Rols;
-            var rols = new List<Role>();
-            foreach (var item in result)
-            {
-                rols.Add(await this.GetRoleByIdWithPrivilegesAsync(item.Id));
-            }
+            return null;
+            ////var result = (await this.userRepository.FirstOrDefaultAsync(s => s.Id == idUser)).Rols;
+            //var rols = new List<Role>();
+            //foreach (var item in result)
+            //{
+            //    rols.Add(await this.GetRoleByIdWithPrivilegesAsync(item.Id));
+            //}
 
-            return rols;
+            //return rols;
         }
     }
 }
