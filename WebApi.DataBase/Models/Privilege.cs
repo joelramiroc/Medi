@@ -15,7 +15,7 @@ namespace WebApi.DataBase.Models
         [ForeignKey(nameof(Role))]
         public int IdRole { get; set; }
 
-        public Role Role { get; set; }
+        public virtual Role Role { get; set; }
 
         public string Name { get; set; }
 

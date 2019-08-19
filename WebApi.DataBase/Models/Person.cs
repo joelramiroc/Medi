@@ -5,6 +5,7 @@
 namespace WebApi.DataBase.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations;
 
@@ -27,8 +28,8 @@ namespace WebApi.DataBase.Models
 
         //public virtual ObservableCollection<User> Users { get; set; }
 
-        public virtual ObservableCollection<Telephone> Telephones { get; set; }
+        public virtual ICollection<Telephone> Telephones { get; set; }
 
-        public virtual ObservableCollection<Address> Adresses { get; set; }
+        public virtual ICollection<Address> Adresses { get; set; }
     }
 }

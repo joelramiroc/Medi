@@ -16,6 +16,6 @@ namespace WebApi.DataBase.Models
         [ForeignKey(nameof(Person))]
         public string IdentityPeople { get; set; }
 
-        public Person Person { get; set; }
+        public virtual Person Person { get; set; }
     }
 }

@@ -4,6 +4,7 @@
 
 namespace WebApi.DataBase.Models
 {
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -14,12 +15,12 @@ namespace WebApi.DataBase.Models
         [ForeignKey(nameof(User))]
         public int IdUser { get; set; }
 
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
         public string RoleName { get; set; }
 
         public string Description { get; set; }
 
-        public ObservableCollection<Privilege> Privileges { get; set; }
+        public ICollection<Privilege> Privileges { get; set; }
     }
 }

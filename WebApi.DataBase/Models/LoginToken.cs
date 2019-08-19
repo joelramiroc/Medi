@@ -14,7 +14,7 @@ namespace WebApi.DataBase.Models
         [ForeignKey(nameof(User))]
         public int Iduser { get; set; }
 
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
         public DateTime CreationDate { get; set; }
 
