@@ -5,17 +5,21 @@
 namespace WebApi.DataBase.Models
 {
     using System.Collections.ObjectModel;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Role
     {
         public int Id { get; set; }
+
+        [ForeignKey(nameof(User))]
+        public int IdUser { get; set; }
+
+        public User User { get; set; }
 
         public string RoleName { get; set; }
 
         public string Description { get; set; }
 
         public ObservableCollection<Privilege> Privileges { get; set; }
-
-        public ObservableCollection<User> Users { get; set; }
     }
 }

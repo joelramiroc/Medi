@@ -25,7 +25,7 @@ namespace WebApi.DataBase.Models
 
         public DateTime Created { get; set; }
 
-        public virtual ObservableCollection<User> Users { get; set; }
+        //public virtual ObservableCollection<User> Users { get; set; }
 
         public virtual ObservableCollection<Telephone> Telephones { get; set; }
 

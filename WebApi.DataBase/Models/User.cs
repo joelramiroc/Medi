@@ -26,10 +26,12 @@ namespace WebApi.DataBase.Models
 
         public string Password { get; set; }
 
-        public ObservableCollection<Role> Rols { get; set; }
+        public virtual ObservableCollection<Privilege> Privileges { get; set; }
 
-        public ObservableCollection<AuditsUser> Auditories_user { get; set; }
+        public virtual ObservableCollection<Role> Rols { get; set; }
 
-        public ObservableCollection<LoginToken> LogginToken { get; set; }
+        public virtual ObservableCollection<AuditsUser> Auditories_user { get; set; }
+
+        public virtual ObservableCollection<LoginToken> LogginToken { get; set; }
     }
 }
