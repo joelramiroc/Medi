@@ -1,5 +1,5 @@
 ﻿// <copyright file="Address.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
+// Copyright (c) Joelsa. All rights reserved.
 // </copyright>
 
 namespace WebApi.DataBase.Models
@@ -11,7 +11,9 @@ namespace WebApi.DataBase.Models
 
     public class Address
     {
-        public string Number { get; set; }
+        public int Id { get; set; } 
+
+        public string Number { get; set; } 
 
         [ForeignKey(nameof(Person))]
         public string IdentityPeople { get; set; }

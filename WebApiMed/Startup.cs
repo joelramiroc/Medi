@@ -25,12 +25,12 @@ namespace WebApiMed
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // This method gets called by the runtime. Use this method to add services to the container.asas
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddEntityFrameworkNpgsql().AddDbContext<WebApiContext>(opt =>
-                opt.UseNpgsql(Configuration.GetConnectionString("MyWebApiConection")));
+                opt.UseNpgsql("Server=localhost;Database=medi;Username=postgres;Password=1;Port=5432"));
 
             services.AddDbContext<WebApiContext>();
             this.LoadRepositories(services);

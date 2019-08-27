@@ -12,10 +12,10 @@ namespace WebApi.DataBase.Models
     {
         public int Id { get; set; }
 
-        //[ForeignKey(nameof(User))]
-        //public int IdUser { get; set; }
+        [ForeignKey(nameof(User))]
+        public int IdUser { get; set; }
 
-        //public virtual User User { get; set; }
+        public virtual User User { get; set; }
 
         public string RoleName { get; set; }
 

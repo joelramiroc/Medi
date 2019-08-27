@@ -27,10 +27,10 @@ namespace WebApi.DataBase.Models
 
         public string Password { get; set; }
 
-        //public virtual ICollection<Role> Rols { get; set; }
+        public virtual ICollection<Role> Rols { get; set; }
 
-        //public virtual ICollection<AuditsUser> Auditories_user { get; set; }
+        public virtual ICollection<AuditsUser> Auditories_user { get; set; }
 
-        //public virtual ICollection<LoginToken> LogginToken { get; set; }
+        public virtual ICollection<LoginToken> LogginToken { get; set; }
     }
 }
