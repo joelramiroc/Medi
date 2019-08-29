@@ -20,13 +20,10 @@ namespace WebApiMed.Controllers
             this.UserManager = UserManager;
         }
 
-
-        [HttpGet]
-        public async Task<ActionResult<object>> GetUser()
+        [HttpGet("{idUser}", Name = "GetUser")]
+        public async Task<ActionResult<object>> GetUser([FromRoute] int idUser)
         {
-            return (await this.UserManager.GetUser(1));
-
-            return null;
+            return await this.UserManager.GetUser(idUser);
         }
     }
 }

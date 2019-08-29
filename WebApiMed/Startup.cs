@@ -56,7 +56,6 @@ namespace WebApiMed
         {
             services.AddTransient<IRepository<Address>, AddressRepository>();
             services.AddTransient<IRepository<AuditsUser>, AuditsUserRepository>();
-            services.AddTransient<IRepository<LoginToken>, LoginTokenRepository>();
             services.AddTransient<IRepository<Person>, PersonRepository>();
             services.AddTransient<IRepository<Privilege>, PrivilegeRepository>();
             services.AddTransient<IRepository<Role>, RolRepository>();
