@@ -12,6 +12,7 @@ namespace WebApiMed
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.IdentityModel.Tokens;
+    using Swashbuckle.AspNetCore.Swagger;
     using System.Text;
     using WebApi.Core.RoleManager;
     using WebApi.Core.UserManager;
@@ -33,18 +34,44 @@ namespace WebApiMed
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddEntityFrameworkNpgsql().AddDbContext<WebApiContext>(opt =>
-                opt.UseNpgsql("Server=localhost;Database=medi;Username=postgres;Password=1;Port=5432"));
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
+                opt.UseNpgsql("Server=localhost;Database=medi;Username=postgres;Password=test;Port=5432"));
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
                 {
-                     ValidateIssuer = true,
-                     ValidateAudience = true,
-                     ValidateIssuerSigningKey = true,
-                     ValidIssuer = "Mysite.com",
-                     ValidAudience = "Mysite.com",
-                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("qwerty"))
-                };
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration["Jwt:Issuer"],
+                        ValidAudience = Configuration["Jwt:Issuer"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                    };
+                });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminUsersOnly",
+                    policy => policy.RequireClaim("Administrator"));
+            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Title = "Swagger Sample",
+                    Version = "v1",
+                });
             });
 
             services.AddDbContext<WebApiContext>();
@@ -74,6 +101,12 @@ namespace WebApiMed
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint(Configuration["BaseSwaggerUrl"] + "/swagger/v1/swagger.json", "Swagger Sample");
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

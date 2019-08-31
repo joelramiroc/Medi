@@ -31,6 +31,6 @@ namespace WebApi.DataBase.Models
 
         public virtual ICollection<AuditsUser> Auditories_user { get; set; }
 
-        public virtual ICollection<LoginToken> LogginToken { get; set; }
+        //public virtual ICollection<LoginToken> LogginToken { get; set; }
     }
 }

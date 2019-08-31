@@ -18,7 +18,7 @@ namespace WebApi.DataBase.Context
 
         public DbSet<Client> Client { get; set; }
 
-        public DbSet<LoginToken> LoginToken { get; set; }
+        //public DbSet<LoginToken> LoginToken { get; set; }
 
         public DbSet<Person> Person { get; set; }
 
