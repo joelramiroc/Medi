@@ -11,7 +11,6 @@ namespace WebApiMed.Controllers
     using WebApi.Core.UserManager;
 
     [Route("api/[controller]")]
-    [Authorize]
     [ApiController]
     public class UserController : Controller
     {

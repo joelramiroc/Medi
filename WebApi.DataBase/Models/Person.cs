@@ -14,19 +14,12 @@ namespace WebApi.DataBase.Models
         [Key]
         public string Identity { get; set; }
 
-        public string FirstName { get; set; }
-
-        public string SecondName { get; set; }
-
-        public string MiddleName { get; set; }
-
-        public string LastName { get; set; }
+        public string FullName { get; set; }
 
         public DateTime DateBirth { get; set; }
 
         public DateTime Created { get; set; }
 
-       
         public virtual ICollection<Telephone> Telephones { get; set; }
 
         public virtual ICollection<Address> Adresses { get; set; }

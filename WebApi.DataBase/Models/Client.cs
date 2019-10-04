@@ -6,12 +6,20 @@ namespace WebApi.DataBase.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Text;
 
     public class Client
     {
-        public int Id { get; set; }
+        [Key]
+        public string ClientCode { get; set; }
 
-        public string Name { get; set; }
+        [ForeignKey(nameof(Person))]
+        public int IdentityPeople { get; set; }
+
+        public Person Person { get; set; }
+
+        public string Photo { get; set; }
     }
 }
