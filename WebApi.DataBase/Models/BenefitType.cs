@@ -4,10 +4,6 @@
 
 namespace WebApi.DataBase.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
     public class BenefitType
     {
         public int Id { get; set; }

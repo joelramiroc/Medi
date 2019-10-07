@@ -4,9 +4,7 @@
 
 namespace WebApiMed.Controllers
 {
-    using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using WebApi.Core.UserManager;
 

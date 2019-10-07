@@ -18,8 +18,6 @@ namespace WebApi.DataBase.Context
 
         public DbSet<Client> Client { get; set; }
 
-        //public DbSet<LoginToken> LoginToken { get; set; }
-
         public DbSet<Person> Person { get; set; }
 
         public DbSet<Privilege> Privilege { get; set; }
@@ -31,5 +29,17 @@ namespace WebApi.DataBase.Context
         public DbSet<Address> Address { get; set; }
 
         public DbSet<Telephone> Telephone { get; set; }
+
+        public DbSet<Agreement> Agreement { get; set; }
+
+        public DbSet<AgreementBenefit> AgreementBenefit { get; set; }
+
+        public DbSet<AgreementState> AgreementState { get; set; }
+
+        public DbSet<BenefitType> BenefitType { get; set; }
+
+        public DbSet<PlanType> PlanType { get; set; }
+
+        public DbSet<Receipt> Receipt { get; set; }
     }
 }
