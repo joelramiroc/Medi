@@ -88,6 +88,13 @@ namespace WebApiMed
             services.AddTransient<IRepository<Role>, RolRepository>();
             services.AddTransient<IRepository<Telephone>, TelephoneRepository>();
             services.AddTransient<IRepository<User>, UserRepository>();
+            services.AddTransient<IRepository<Agreement>, AgreementRepository>();
+            services.AddTransient<IRepository<AgreementBenefit>, AgreementBenefitRepository>();
+            services.AddTransient<IRepository<AgreementState>, AgreementStateRepository>();
+            services.AddTransient<IRepository<BenefitType>, BenefitTypeRepository>();
+            services.AddTransient<IRepository<Client>, ClientRepository>();
+            services.AddTransient<IRepository<PlanType>, PlanTypeRepository>();
+            services.AddTransient<IRepository<Receipt>, ReceiptRepository>();
         }
 
         public void LoadManagers(IServiceCollection services)
